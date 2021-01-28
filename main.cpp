@@ -10,7 +10,7 @@ uint16_t buffer[PicoDisplay::WIDTH * PicoDisplay::HEIGHT];
 PicoDisplay pico_display(buffer);
 
 int main() {
-    setup_default_uart();
+    stdio_init_all();
     printf("Hello, world!\n");
 
     pico_display.init();
@@ -36,6 +36,7 @@ int main() {
                 pico_display.set_backlight(0);
             }
             pico_display.update();
+            printf("Ping!\n");
         }
         sleep_ms(250);
     }

@@ -27,5 +27,8 @@ target_link_libraries(
     pico_display
 )
 
+# Enable stdin / stdout over USB serial
+pico_enable_stdio_usb(picoco2 1)
+
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(picoco2)
